@@ -1,4 +1,4 @@
-
+// image from kindpng license for personal use only
 #include <SFML/Graphics.hpp>
 #include <iostream>
 using namespace sf;
