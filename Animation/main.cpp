@@ -1,7 +1,7 @@
 // image from kindpng license for personal use only
 #include <SFML/Graphics.hpp>
-#include <iostream>
 #include "Animation.h"
+
 using namespace sf;
 using namespace std;
 

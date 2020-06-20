@@ -9,11 +9,11 @@
 C:/C++ Free/Animation/Animation.h
 SFML/Graphics.hpp
 -
+iostream
+-
 
 C:/C++ Free/Animation/main.cpp
 SFML/Graphics.hpp
--
-iostream
 -
 Animation.h
 C:/C++ Free/Animation/Animation.h

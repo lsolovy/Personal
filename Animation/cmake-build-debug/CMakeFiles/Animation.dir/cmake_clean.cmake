@@ -2,6 +2,7 @@ file(REMOVE_RECURSE
   "Animation.exe"
   "Animation.exe.manifest"
   "Animation.pdb"
+  "CMakeFiles/Animation.dir/Animation.cpp.obj"
   "CMakeFiles/Animation.dir/main.cpp.obj"
   "libAnimation.dll.a"
 )

@@ -4,6 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "C:/C++ Free/Animation/Animation.cpp" "C:/C++ Free/Animation/cmake-build-debug/CMakeFiles/Animation.dir/Animation.cpp.obj"
   "C:/C++ Free/Animation/main.cpp" "C:/C++ Free/Animation/cmake-build-debug/CMakeFiles/Animation.dir/main.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

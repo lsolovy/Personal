@@ -122,6 +122,33 @@ Animation/fast:
 	$(MAKE) -f CMakeFiles\Animation.dir\build.make CMakeFiles/Animation.dir/build
 .PHONY : Animation/fast
 
+Animation.obj: Animation.cpp.obj
+
+.PHONY : Animation.obj
+
+# target to build an object file
+Animation.cpp.obj:
+	$(MAKE) -f CMakeFiles\Animation.dir\build.make CMakeFiles/Animation.dir/Animation.cpp.obj
+.PHONY : Animation.cpp.obj
+
+Animation.i: Animation.cpp.i
+
+.PHONY : Animation.i
+
+# target to preprocess a source file
+Animation.cpp.i:
+	$(MAKE) -f CMakeFiles\Animation.dir\build.make CMakeFiles/Animation.dir/Animation.cpp.i
+.PHONY : Animation.cpp.i
+
+Animation.s: Animation.cpp.s
+
+.PHONY : Animation.s
+
+# target to generate assembly for a file
+Animation.cpp.s:
+	$(MAKE) -f CMakeFiles\Animation.dir\build.make CMakeFiles/Animation.dir/Animation.cpp.s
+.PHONY : Animation.cpp.s
+
 main.obj: main.cpp.obj
 
 .PHONY : main.obj
@@ -158,6 +185,9 @@ help:
 	@echo ... rebuild_cache
 	@echo ... Animation
 	@echo ... edit_cache
+	@echo ... Animation.obj
+	@echo ... Animation.i
+	@echo ... Animation.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

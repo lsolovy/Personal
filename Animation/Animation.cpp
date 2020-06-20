@@ -1,10 +1,10 @@
 //
 // Created by solov on 6/20/2020.
 //
-
+#include <iostream>
 #include "Animation.h"
 
-Animation :: Animation(Texture* texture, Vector2u imageCount, float switchTime);{
+Animation :: Animation(Texture* texture, Vector2u imageCount, float switchTime){
     this->imageCount = imageCount;
     this->switchTime = switchTime;
     totalTime = 0.0f;

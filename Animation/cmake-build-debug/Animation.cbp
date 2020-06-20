@@ -82,6 +82,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="C:/C++ Free/Animation/Animation.cpp">
+			<Option target="Animation"/>
+		</Unit>
+		<Unit filename="C:/C++ Free/Animation/Animation.h">
+			<Option target="Animation"/>
+		</Unit>
 		<Unit filename="C:/C++ Free/Animation/main.cpp">
 			<Option target="Animation"/>
 		</Unit>

@@ -3,6 +3,7 @@
 //
 #pragma once
 #include <SFML/Graphics.hpp>
+#include <iostream>
 using namespace sf;
 using namespace std;
 #ifndef ANIMATION_ANIMATION_H
@@ -25,7 +26,6 @@ private:
     Vector2u currentImage;
     float totalTime;
     float switchTime;
-
 };
 
 
