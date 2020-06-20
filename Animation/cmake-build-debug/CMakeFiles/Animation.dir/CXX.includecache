@@ -6,17 +6,17 @@
 
 #IncludeRegexTransform: 
 
+C:/C++ Free/Animation/Animation.cpp
+iostream
+-
+Animation.h
+C:/C++ Free/Animation/Animation.h
+
 C:/C++ Free/Animation/Animation.h
 SFML/Graphics.hpp
 -
 iostream
 -
-
-C:/C++ Free/Animation/main.cpp
-SFML/Graphics.hpp
--
-Animation.h
-C:/C++ Free/Animation/Animation.h
 
 C:/Program Files/SFML-2.5.1/include/SFML/Config.hpp
 TargetConditionals.h
