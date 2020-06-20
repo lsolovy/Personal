@@ -1,0 +1,3 @@
+C:/C++ Free/Animation/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/C++ Free/Animation/cmake-build-debug/CMakeFiles/Animation.dir
+C:/C++ Free/Animation/cmake-build-debug/CMakeFiles/edit_cache.dir
