@@ -16,7 +16,7 @@ public:
 
     ~Animation();
 
-    void Update(int row, float deltaTime);
+    void Update(int row, float deltaTime, bool faceRight);
 
 
     IntRect uvRect;
