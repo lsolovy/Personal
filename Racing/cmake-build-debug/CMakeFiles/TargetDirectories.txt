@@ -1,0 +1,3 @@
+C:/C++ Free/Racing/cmake-build-debug/CMakeFiles/Racing.dir
+C:/C++ Free/Racing/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/C++ Free/Racing/cmake-build-debug/CMakeFiles/rebuild_cache.dir
