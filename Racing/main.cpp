@@ -86,6 +86,13 @@ int main() {
     sBackground.setTextureRect(IntRect(0, 0, 5000, 411));
     sBackground.setPosition(-2000, 0);
 
+    Font font;
+    if (!font.loadFromFile("../fonts/Gameplay.ttf")) {
+        return EXIT_FAILURE;
+    }
+    Text timertext;
+    timertext.setFont(font);
+
     CircleShape circle;
     circle.setRadius(50);
     circle.setOutlineColor(sf::Color::Black);
@@ -129,12 +136,14 @@ int main() {
         if (i > 750) { line.y = sin(i / 30.0) * 1500; }
 
         lines.push_back(line);
-    }
 
+    }
     int N = lines.size();
     float playerX = 0;
     int pos = 0;
     int H = 1500;
+    int time = 0;
+
 
     while (app.isOpen()) {
         Event e;
@@ -145,6 +154,10 @@ int main() {
         }
 
         int speed = 0;
+
+        if(time >= 0){
+            time++;
+        }
 
         if (Keyboard::isKeyPressed(Keyboard::Right)) { playerX += 0.1; }
         if (Keyboard::isKeyPressed(Keyboard::Left)) { playerX -= 0.1; }
@@ -200,6 +213,11 @@ int main() {
         for (int n = startPos + 300; n > startPos; n--) {
             lines[n % N].drawSprite(app);
         }
+        timertext.setString("Timer: " + to_string(time));
+        timertext.setFillColor(sf::Color::Black);
+        timertext.setCharacterSize(22);
+        timertext.setPosition(880, 30);
+        app.draw(timertext);
         app.draw(circle);
         app.display();
     }
