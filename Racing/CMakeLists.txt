@@ -11,6 +11,7 @@ configure_file(images/5.png images/5.png COPYONLY)
 configure_file(images/6.png images/6.png COPYONLY)
 configure_file(images/7.png images/7.png COPYONLY)
 configure_file(images/bg.png images/bg.png COPYONLY)
+
 # Define sources and executable
 set(EXECUTABLE_NAME "Racing")
 
