@@ -92,6 +92,8 @@ int main() {
     }
     Text timertext;
     timertext.setFont(font);
+    Text laptext;
+    laptext.setFont(font);
 
     CircleShape circle;
     circle.setRadius(50);
@@ -104,7 +106,7 @@ int main() {
 
 
     vector<Line> lines;
-    // the path of the road
+    // the path of the road with the objects
     for (int i = 0; i < 1600; i++) {
         Line line;
         line.z = i * segL;
@@ -135,6 +137,7 @@ int main() {
 
         if (i > 750) { line.y = sin(i / 30.0) * 1500; }
 
+
         lines.push_back(line);
 
     }
@@ -143,6 +146,7 @@ int main() {
     int pos = 0;
     int H = 1500;
     int time = 0;
+    int lap = 0;
 
 
     while (app.isOpen()) {
@@ -158,6 +162,7 @@ int main() {
         if(time >= 0){
             time++;
         }
+
 
         if (Keyboard::isKeyPressed(Keyboard::Right)) { playerX += 0.1; }
         if (Keyboard::isKeyPressed(Keyboard::Left)) { playerX -= 0.1; }
@@ -189,6 +194,7 @@ int main() {
 
         ///////draw road////////
         for (int n = startPos; n < startPos + 300; n++) {
+
             Line &l = lines[n % N];
             l.project(playerX * roadW - x, camH, startPos * segL - (n >= N ? N * segL : 0));
             x += dx;
@@ -207,6 +213,12 @@ int main() {
             drawQuad(app, grass, 0, p.Y, width, 0, l.Y, width);
             drawQuad(app, rumble, p.X, p.Y, p.W * 1.2, l.X, l.Y, l.W * 1.2);
             drawQuad(app, road, p.X, p.Y, p.W, l.X, l.Y, l.W);
+
+
+        }
+
+        if(startPos == 1599){
+            lap++;
         }
 
         ////////draw objects////////
@@ -217,7 +229,12 @@ int main() {
         timertext.setFillColor(sf::Color::Black);
         timertext.setCharacterSize(22);
         timertext.setPosition(880, 30);
+        laptext.setString("Lap: " + to_string(lap));
+        laptext.setFillColor(sf::Color::Black);
+        laptext.setCharacterSize(22);
+        laptext.setPosition(880,60);
         app.draw(timertext);
+        app.draw(laptext);
         app.draw(circle);
         app.display();
     }
