@@ -1,9 +1,13 @@
 // Basic code done from FamTrinli on youtube.com - https://www.youtube.com/watch?v=N60lBZDEwJ8
-// Car images, License for personal use only pngitem.com
+// visual of lightting bolt , http://www.clipartpanda.com/categories/lighting-bolt-png , free use license if non commerical use
+// reforemated code, added a visual for the player, added a time element, added a lap component, added if the player is off the road the speed will decrease, also won't let the player fall below screen
+
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
 #include <string>
 #include <cmath>
+#include <cstdlib>
+#include <ctime>
 #include <iostream>
 
 using namespace sf;
@@ -73,7 +77,7 @@ int main() {
 
     Texture t[50];
     Sprite object[50];
-    for (int i = 1; i <= 7; i++) {
+    for (int i = 1; i <= 8; i++) {
         t[i].loadFromFile("images/" + std::to_string(i) + ".png");
         t[i].setSmooth(true);
         object[i].setTexture(t[i]);
@@ -134,6 +138,20 @@ int main() {
             line.spriteX = -1.2;
             line.sprite = object[7];
         }
+        if(i == 500){
+            double u;
+            srand(unsigned(time(NULL)));
+            u = (double)rand()/(RAND_MAX+.1)+.1+(rand()%1);
+            line.spriteX = .5 - u;
+            line.sprite = object[8];
+        }
+        if(i == 750){
+            double t;
+            srand(unsigned(time(NULL)));
+            t = (double)rand()/(RAND_MAX+.1)+.1+(rand()%1);
+            line.spriteX = -.5 - t;
+            line.sprite = object[8];
+        }
 
         if (i > 750) { line.y = sin(i / 30.0) * 1500; }
 
@@ -171,10 +189,11 @@ int main() {
         if (Keyboard::isKeyPressed(Keyboard::Tab)) { speed *= 3; }
         if (Keyboard::isKeyPressed(Keyboard::W)) { H += 100; }
         if (Keyboard::isKeyPressed(Keyboard::S)) { H -= 100; }
-
+        // won't let the player go below road
         if(H < 1500){
             H = 1500;
         }
+        // if player is off the road
         if(playerX >= 1 || playerX <= -1){
             speed *= 0.5;
         }

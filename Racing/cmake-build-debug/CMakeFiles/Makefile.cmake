@@ -20,6 +20,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "../images/5.png"
   "../images/6.png"
   "../images/7.png"
+  "../images/8.png"
   "../images/bg.png"
   "C:/Program Files/JetBrains/CLion 2019.3.3/bin/cmake/win/share/cmake-3.15/Modules/CMakeCInformation.cmake"
   "C:/Program Files/JetBrains/CLion 2019.3.3/bin/cmake/win/share/cmake-3.15/Modules/CMakeCXXInformation.cmake"
@@ -64,6 +65,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "images/5.png"
   "images/6.png"
   "images/7.png"
+  "images/8.png"
   "images/bg.png"
   "CMakeFiles/CMakeDirectoryInformation.cmake"
   )
