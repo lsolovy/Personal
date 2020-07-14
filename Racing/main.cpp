@@ -98,6 +98,8 @@ int main() {
     timertext.setFont(font);
     Text laptext;
     laptext.setFont(font);
+    Text bolttext;
+    bolttext.setFont(font);
 
     CircleShape circle;
     circle.setRadius(50);
@@ -107,7 +109,8 @@ int main() {
     float b = 600;
     circle.setPosition(a,b);
 
-
+    float l1 = 0;
+    float l2 = 0;
 
     vector<Line> lines;
     // the path of the road with the objects
@@ -139,17 +142,21 @@ int main() {
             line.sprite = object[7];
         }
         if(i == 500){
-            double u;
+            double s;
             srand(unsigned(time(NULL)));
-            u = (double)rand()/(RAND_MAX+.1)+.1+(rand()%1);
-            line.spriteX = .5 - u;
+            s = rand()% 3;
+            line.spriteX = s/10 - .5;
+            l1 = line.spriteX;
+            cout << line.spriteX << " ";
             line.sprite = object[8];
         }
         if(i == 750){
             double t;
             srand(unsigned(time(NULL)));
-            t = (double)rand()/(RAND_MAX+.1)+.1+(rand()%1);
-            line.spriteX = -.5 - t;
+            t = rand()% 3;
+            line.spriteX = t/10 + .5;
+            l2 = line.spriteX;
+            cout << line.spriteX << " ";
             line.sprite = object[8];
         }
 
@@ -165,7 +172,7 @@ int main() {
     int H = 1500;
     int time = 0;
     int lap = 0;
-
+    int bolts = 0;
 
     while (app.isOpen()) {
         Event e;
@@ -197,6 +204,11 @@ int main() {
         if(playerX >= 1 || playerX <= -1){
             speed *= 0.5;
         }
+        if(playerX == l1 || playerX == l2){
+            bolts++;
+        }
+        cout << playerX << " ";
+
         pos += speed;
         while (pos >= N * segL) { pos -= N * segL; }
         while (pos < 0) { pos += N * segL; }
@@ -252,8 +264,13 @@ int main() {
         laptext.setFillColor(sf::Color::Black);
         laptext.setCharacterSize(22);
         laptext.setPosition(880,60);
+        bolttext.setString("Bolts: " + to_string(bolts));
+        bolttext.setFillColor(sf::Color::Black);
+        bolttext.setCharacterSize(22);
+        bolttext.setPosition(880,90);
         app.draw(timertext);
         app.draw(laptext);
+        app.draw(bolttext);
         app.draw(circle);
         app.display();
     }
