@@ -20,6 +20,7 @@ int roadW = 2000;
 int segL = 200; //segment length
 float camD = 0.84; //camera depth
 
+
 void drawQuad(RenderWindow &w, Color c, int x1, int y1, int w1, int x2, int y2, int w2) {
     ConvexShape shape(4);
     shape.setFillColor(c);
@@ -68,6 +69,7 @@ struct Line {
         s.setPosition(destX, destY);
         app.draw(s);
     }
+
 };
 
 
@@ -105,12 +107,14 @@ int main() {
     circle.setRadius(50);
     circle.setOutlineColor(sf::Color::Black);
     circle.setOutlineThickness(5);
-    float a = 450;
+    float a = 475;
     float b = 600;
     circle.setPosition(a,b);
 
+
+
     float l1 = 0;
-    float l2 = 0;
+
 
     vector<Line> lines;
     // the path of the road with the objects
@@ -150,15 +154,7 @@ int main() {
             cout << line.spriteX << " ";
             line.sprite = object[8];
         }
-        if(i == 750){
-            double t;
-            srand(unsigned(time(NULL)));
-            t = rand()% 3;
-            line.spriteX = t/10 + .5;
-            l2 = line.spriteX;
-            cout << line.spriteX << " ";
-            line.sprite = object[8];
-        }
+
 
         if (i > 750) { line.y = sin(i / 30.0) * 1500; }
 
@@ -204,10 +200,6 @@ int main() {
         if(playerX >= 1 || playerX <= -1){
             speed *= 0.5;
         }
-        if(playerX == l1 || playerX == l2){
-            bolts++;
-        }
-        cout << playerX << " ";
 
         pos += speed;
         while (pos >= N * segL) { pos -= N * segL; }
@@ -223,6 +215,10 @@ int main() {
         int maxy = height;
         float x = 0, dx = 0;
 
+        if(playerX == l1 && startPos == 492){
+            bolts++;
+        }
+        cout << startPos << " ";
         ///////draw road////////
         for (int n = startPos; n < startPos + 300; n++) {
 
