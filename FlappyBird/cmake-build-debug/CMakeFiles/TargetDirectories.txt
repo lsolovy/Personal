@@ -1,3 +1,0 @@
-C:/C++ Free/FlappyBird/cmake-build-debug/CMakeFiles/FlappyBird.dir
-C:/C++ Free/FlappyBird/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/C++ Free/FlappyBird/cmake-build-debug/CMakeFiles/rebuild_cache.dir
